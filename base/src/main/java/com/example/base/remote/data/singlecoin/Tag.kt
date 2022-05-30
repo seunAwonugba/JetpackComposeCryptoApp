@@ -1,4 +1,4 @@
-package com.example.base.data.remote.singlecoins
+package com.example.base.remote.data.singlecoin
 
 data class Tag(
     val coin_counter: Int,

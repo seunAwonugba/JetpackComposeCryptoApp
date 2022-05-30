@@ -1,4 +1,4 @@
-package com.example.base.data.ui
+package com.example.base.viewdata
 
 data class AllCoinsResponse(
     val id: String,

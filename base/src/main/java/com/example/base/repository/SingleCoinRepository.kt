@@ -1,6 +1,6 @@
 package com.example.base.repository
 
-import com.example.base.data.ui.SingleCoinResponse
+import com.example.base.viewdata.SingleCoinResponse
 import retrofit2.Response
 
 interface SingleCoinRepository {

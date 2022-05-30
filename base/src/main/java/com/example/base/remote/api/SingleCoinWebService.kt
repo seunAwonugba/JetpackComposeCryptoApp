@@ -1,7 +1,7 @@
-package com.example.base.data.remote.singlecoins.api
+package com.example.base.remote.api
 
 import com.example.base.Constants.SINGLE_COIN_END_POINT
-import com.example.base.data.remote.singlecoins.SingleCoinResponseDto
+import com.example.base.remote.data.singlecoin.SingleCoinResponseDto
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

@@ -1,3 +1,3 @@
-package com.example.base.data.remote.allcoins
+package com.example.base.remote.data.allcoins
 
 class AllCoinsResponseDto : ArrayList<AllCoinsResponseItem>()

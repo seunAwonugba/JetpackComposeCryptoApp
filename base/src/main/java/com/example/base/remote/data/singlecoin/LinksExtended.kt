@@ -1,4 +1,4 @@
-package com.example.base.data.remote.singlecoins
+package com.example.base.remote.data.singlecoin
 
 data class LinksExtended(
     val stats: Stats,

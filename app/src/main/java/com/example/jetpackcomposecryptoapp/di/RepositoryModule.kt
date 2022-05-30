@@ -1,7 +1,7 @@
 package com.example.jetpackcomposecryptoapp.di
 
-import com.example.base.data.remote.allcoins.api.AllCoinsWebService
-import com.example.base.data.remote.singlecoins.api.SingleCoinWebService
+import com.example.base.remote.api.AllCoinsWebService
+import com.example.base.remote.api.SingleCoinWebService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.example.base.data.remote.allcoins
+package com.example.base.remote.data.allcoins
 
 data class AllCoinsResponseItem(
     val id: String,
