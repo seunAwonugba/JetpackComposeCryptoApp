@@ -1,4 +1,4 @@
-package com.example.base.viewdata
+package com.example.base.view
 
 import com.example.base.remote.data.singlecoin.*
 

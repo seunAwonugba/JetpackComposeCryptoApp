@@ -1,8 +1,9 @@
 package com.example.base.repository
 
-import com.example.base.viewdata.AllCoinsResponse
+import com.example.base.remote.data.allcoins.AllCoinsResponseDto
+import com.example.base.view.AllCoinsResponse
 import retrofit2.Response
 
 interface AllCoinsRepository {
-    suspend fun getAllCoins() : Response<AllCoinsResponse>
+    suspend fun getAllCoins() : Response<AllCoinsResponseDto>
 }
