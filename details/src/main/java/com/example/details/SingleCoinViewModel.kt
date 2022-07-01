@@ -25,6 +25,7 @@ class SingleCoinViewModel @Inject constructor(
     private val coinId: String?
         get() = savedStateHandle["coinId"]
 
+
     init {
         getSingleCoin(coinId = coinId.toString())
     }

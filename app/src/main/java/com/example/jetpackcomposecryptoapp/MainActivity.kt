@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.jetpackcomposecryptoapp.components.GlobalScreen
 import com.example.jetpackcomposecryptoapp.ui.theme.JetpackComposeCryptoAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,22 +25,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Oluwaseun")
+                    GlobalScreen()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    JetpackComposeCryptoAppTheme {
-        Greeting("Android")
     }
 }
