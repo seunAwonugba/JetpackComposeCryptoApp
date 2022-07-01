@@ -2,6 +2,7 @@ package com.example.list.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,9 +19,10 @@ fun AllCoinsListItem(
     onClickListItem : (AllCoinsResponse) -> Unit
 ) {
     Box(
-        modifier = Modifier.padding(16.dp).clickable {
-            onClickListItem(allCoinsResponse)
-        }.fillMaxSize()
+        modifier = Modifier
+            .clickable { onClickListItem(allCoinsResponse) }
+            .fillMaxSize()
+            .padding(16.dp)
     ){
         Row(
             modifier = Modifier.fillMaxSize(),
@@ -37,7 +39,7 @@ fun AllCoinsListItem(
             if (allCoinsResponse.is_active){
                 Text(
                     text = "active",
-                    color = Color.Green,
+                    color = MaterialTheme.colors.primary,
                     fontStyle = FontStyle.Italic
                 )
             }else{

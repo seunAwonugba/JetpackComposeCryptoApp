@@ -18,13 +18,12 @@ fun MainAppNavGraph(
         startDestination = Screens.AllCoinsScreen.route
     ){
         composable(Screens.AllCoinsScreen.route){
-            onTitleChange("Crypto Coins")
             AllCoinsListScreen {
-                navController.navigate(Screens.SingleCoinScreen.route)
+                navController.navigate("${Screens.SingleCoinScreen.route}/$it")
             }
         }
 
-        composable(Screens.SingleCoinScreen.route){
+        composable("${Screens.SingleCoinScreen.route}/{coinId}"){
             onTitleChange("Crypto Details")
             SingleCoinScreen()
 

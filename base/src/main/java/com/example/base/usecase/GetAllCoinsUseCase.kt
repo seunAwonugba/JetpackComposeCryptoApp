@@ -1,6 +1,5 @@
 package com.example.base.usecase
 
-import android.util.Log
 import com.example.base.repository.AllCoinsRepository
 import com.example.base.utils.Resource
 import com.example.base.view.AllCoinsResponse
@@ -20,8 +19,6 @@ class GetAllCoinsUseCase @Inject constructor(
 
             val response = allCoinsRepository.getAllCoins()
             val data = response.body()
-
-            Log.e("RECEIVED_DATA", data.toString())
 
             if (response.isSuccessful && data != null){
                 emit(Resource.Success(

@@ -24,11 +24,11 @@ fun GlobalScaffold(
     Scaffold(
         scaffoldState = scaffoldState,
         topBar = {
-//            val showTopAppBar = !listOf(
-//                Screens.SingleCoinScreen.route
-//            ).contains(currentRoute)
+            val showTopAppBar = !listOf(
+                Screens.AllCoinsScreen.route
+            ).contains(currentRoute)
 
-//            if (!showTopAppBar) return@Scaffold
+            if (!showTopAppBar) return@Scaffold
 
             GlobalTopAppBar(title = title) {
                 onClickNavUp()
