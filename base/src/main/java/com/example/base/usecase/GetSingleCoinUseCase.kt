@@ -21,28 +21,30 @@ class GetSingleCoinUseCase @Inject constructor(
             val response = singleCoinRepository.getSingleCoin(coin_id = coinId)
             val data = response.body()
 
-            if (response.isSuccessful && data != null){
-                emit(Resource.Success(
-                    data = SingleCoinResponse(
-                        description = data.description,
-                        development_status = data.development_status,
-                        first_data_at = data.first_data_at,
-                        id = data.id,
-                        is_active = data.is_active,
-                        is_new = data.is_new,
-                        last_data_at = data.last_data_at,
-                        links = data.links,
-                        links_extended = data.links_extended,
-                        name = data.name,
-                        rank = data.rank,
-                        started_at = data.started_at,
-                        symbol = data.symbol,
-                        tags = data.tags,
-                        team = data.team,
-                        type = data.type,
-                        whitepaper = data.whitepaper
-                    )
-                ))
+            if (response.isSuccessful){
+                if (data != null){
+                    emit(Resource.Success(
+                        data = SingleCoinResponse(
+                            description = data.description ?: "Description not available",
+                            development_status = data.development_status?: "",
+                            first_data_at = data.first_data_at?: "",
+                            id = data.id?: "",
+                            is_active = data.is_active?: false,
+                            is_new = data.is_new?: false,
+                            last_data_at = data.last_data_at?: "",
+                            links = data.links,
+                            links_extended = data.links_extended,
+                            name = data.name?: "",
+                            rank = data.rank?: 0,
+                            started_at = data.started_at?: "",
+                            symbol = data.symbol?: "",
+                            tags = data.tags,
+                            team = data.team,
+                            type = data.type?: "",
+                            whitepaper = data.whitepaper
+                        )
+                    ))
+                }
             }else{
                 emit(Resource.Error("A ${response.code()} error occurred: caused by : ${response.message()}"))
             }

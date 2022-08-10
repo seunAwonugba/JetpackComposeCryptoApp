@@ -16,7 +16,7 @@ class GetAllCoinsUseCase @Inject constructor(
     operator fun invoke() : Flow<Resource<List<AllCoinsResponse>>> = flow{
         try {
             emit(Resource.Loading())
-
+            
             val response = allCoinsRepository.getAllCoins()
             val data = response.body()
 
@@ -34,12 +34,14 @@ class GetAllCoinsUseCase @Inject constructor(
                     }
                 ))
             }else{
-                emit(Resource.Error("A ${response.code()} error occurred: caused by : ${response.message()}"))
+                //this error occurs when the end point path or query is incorrect, most time u wont get response.message
+                emit(Resource.Error("${response.code()} error"))
             }
         }catch (err : HttpException){
-            emit(Resource.Error("A ${err.code()} error occurred: caused by : ${err.message()}"))
+            emit(Resource.Error("${err.code()}"))
         }catch (err : IOException){
-            emit(Resource.Error("An error occurred: caused by ${err.message}"))
+            //io occurs when there is network error, or the base url is wrong
+            emit(Resource.Error("$err"))
         }
     }
 }

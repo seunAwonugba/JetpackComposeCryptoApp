@@ -1,5 +1,6 @@
 package com.example.details
 
+import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
@@ -41,6 +42,7 @@ class SingleCoinViewModel @Inject constructor(
                 }
                 is Resource.Error -> {
                     _state.value = SingleCoinState(error = it.message.toString())
+                    Log.e("MY_ERROR", it.message.toString())
                 }
                 is Resource.Loading -> {
                     _state.value = SingleCoinState(isLoading = true)

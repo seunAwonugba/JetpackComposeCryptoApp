@@ -25,6 +25,7 @@ fun AllCoinsListScreen(
     viewModel : AllCoinsViewModel = hiltViewModel(),
     navToDetails : (String) -> Unit
 ) {
+
     val state = viewModel.state.value
     
     Scaffold(

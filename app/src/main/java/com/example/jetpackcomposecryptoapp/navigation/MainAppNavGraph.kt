@@ -18,11 +18,12 @@ fun MainAppNavGraph(
         startDestination = Screens.AllCoinsScreen.route
     ){
         composable(Screens.AllCoinsScreen.route){
-            AllCoinsListScreen {
-                navController.navigate("${Screens.SingleCoinScreen.route}/$it")
+            AllCoinsListScreen { args->
+                navController.navigate("${Screens.SingleCoinScreen.route}/$args")
             }
         }
 
+        //id was of the args was passed using saveStateHandler in VM, instead of using args
         composable("${Screens.SingleCoinScreen.route}/{coinId}"){
             onTitleChange("Crypto Details")
             SingleCoinScreen()
